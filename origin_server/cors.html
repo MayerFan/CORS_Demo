@@ -1,0 +1,53 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>跨域资源共享</title>
+    </head>
+    <body>
+        <button onclick="simpleRequest()">Ajax简单请求</button>
+        <button onclick="noSimpleRequest()">Ajax非简单请求</button>
+        <h5>请求结果为：</h5>
+        <p></p>
+    </body>
+
+    <script>
+        function simpleRequest() {//Ajax简单请求
+            var pDoc = document.getElementsByTagName("p")[0]
+            pDoc.innerHTML = ""
+            var xmlHttp 
+            if(window.XMLHttpRequest) {
+                xmlHttp = new XMLHttpRequest()
+            }else {
+                xmlHttp = new ActiveXObject("Microsoft.XMLHTTP")
+            }
+            xmlHttp.onreadystatechange = function() {
+                if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+                    pDoc.innerHTML = xmlHttp.responseText
+                }
+            }
+            xmlHttp.open("POST", "http://localhost:3000/client/api/000003", true)
+            xmlHttp.send()
+        }
+    
+        function noSimpleRequest() {//Ajax非简单请求
+            var pDoc = document.getElementsByTagName("p")[0]
+            pDoc.innerHTML = ""
+            var xmlHttp
+            if(window.XMLHttpRequest) {
+                xmlHttp = new XMLHttpRequest()
+            }else {
+                xmlHttp = new ActiveXObject("Microsoft.XMLHTTP")
+            }
+            xmlHttp.onreadystatechange = function() {
+                if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+                    pDoc.innerHTML = xmlHttp.responseText
+                }
+            }
+            xmlHttp.open("POST", "http://172.0.2.218:3000/client/api/000003", true)
+            xmlHttp.setRequestHeader("Content-Type","application/json")
+            xmlHttp.send()
+        }
+    </script>
+</html>
+

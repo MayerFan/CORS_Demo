@@ -1,0 +1,29 @@
+
+/* * {
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
+} */
+.list-group a {
+    border-left: 0 solid transparent;
+    border-right: 0 solid transparent;
+
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
+}
+.phone {
+    height: 45px;
+}
+.phone a {
+    line-height: 45px;
+}
+/* play.jade */
+.play_content {
+    position: relative;
+}
+.play_content a {
+    width: 100%;
+    position: absolute;
+    bottom: 70px;
+}

@@ -1,0 +1,19 @@
+// 继承布局(只有继承才能重写block)
+extends ../layout 
+
+block content 
+    .container-fluid
+        .row
+            .list-group
+                a.list-group-item(href="/service/play") #{data.play}
+                    span.glyphicon.glyphicon-menu-right.pull-right
+                a.list-group-item(href="/service/question") #{data.question}
+                    span.glyphicon.glyphicon-menu-right.pull-right
+                a.list-group-item(href="/service/rule") #{data.rule}
+                    span.glyphicon.glyphicon-menu-right.pull-right
+    nav.navbar-default.navbar-fixed-bottom
+        .container-fluid(style="background-color: #ff4040")
+            .phone.center-block.text-center
+                a(href="tel://010-56707868")
+                    img(src="http://policy.51tongcai.com/client/img/customer_phone.png", alt="", width="25px", height="25px") 
+                    span &ensp;&ensp;客服热线

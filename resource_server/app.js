@@ -88,12 +88,12 @@ app.post("/client/api/000003", function(req, res) {
 
 //配置预检请求方式2: 
 //预检请求方法OPTIONS
-// app.options("/client/api/000003", function(req, res, next) {
-    // res.setHeader("Access-Control-Allow-Origin", "*");  
-    // res.setHeader("Access-Control-Allow-Headers", "Content-Type");  
-    // res.setHeader("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS"); 
-    // next();
-// })
+app.options("/client/api/000003", function(req, res, next) {
+    res.setHeader("Access-Control-Allow-Origin", "*");  
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");  
+    res.setHeader("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS"); 
+    next();
+})
 app.post("/client/api/000003", function(req, res) {
     var jsonData = {
         code: "0000",

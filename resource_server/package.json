@@ -10,4 +10,3 @@
         "jade": "^1.11.0"
     }
 }
-//npm install 后自动运行bower install脚本

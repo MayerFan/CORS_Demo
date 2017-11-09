@@ -2,6 +2,9 @@
     "name": "stategy",
     "version": "1.0.0",
     "author": "mayerf",
+    "scripts": {
+        "postinstall": "bower install" //npm install 后自动运行bower install脚本
+    },
     "dependencies": {
         "express": "4.16.2",
         "jade": "^1.11.0"
